@@ -1,7 +1,14 @@
 import sqlite3   #enable control of an sqlite database
 import csv       #facilitates CSV I/O
+import os
 
 f="discobandit.db"
+
+## TO avoid errors when re-testing code
+try:
+    os.remove(f)
+except OSError:
+    pass
 
 db = sqlite3.connect(f) #open if f exists, otherwise create
 c = db.cursor()    #facilitate db ops

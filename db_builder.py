@@ -4,7 +4,7 @@ import os
 
 f="discobandit.db"
 
-## TO avoid errors when re-testing code
+# to avoid 'table already exists' errors when re-testing code
 try:
     os.remove(f)
 except OSError:
